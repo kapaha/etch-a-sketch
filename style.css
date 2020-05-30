@@ -9,15 +9,27 @@
     box-sizing: border-box;
 }
 
+#grid-size {
+    margin-top: 2vw;
+    text-align: center;
+    font-family: sans-serif;
+}
+
 #grid-container {
-    width: 35vw;
-    height: 35vw;
+    margin: 2vw auto;
+    width: 50vw;
+    height: 50vw;
     display: grid;
-    grid-gap: 1px;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-columns), 1fr);
+    border: 1px solid black;
 }
 
 .grid-item {
+    border: 1px solid black;
+    background-color: slategray;
+}
+
+.hover-pink {
     background-color: pink;
 }
