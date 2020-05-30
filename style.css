@@ -1,5 +1,23 @@
+:root {
+    --grid-rows: 1;
+    --grid-columns: 1;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+#grid-container {
+    width: 35vw;
+    height: 35vw;
+    display: grid;
+    grid-gap: 1px;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+}
+
+.grid-item {
+    background-color: pink;
 }
