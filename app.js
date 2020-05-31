@@ -1,15 +1,22 @@
-// 'use strict'
+'use strict'
 
 const gridContainer = document.getElementById('grid-container');
 const gridSize = document.getElementById('grid-size');
+const resetButton = document.getElementById('reset-btn');
 
-makeRows(50, 50);
+makeRows(16, 16);
 
 const cells = document.querySelectorAll('.grid-item');
 
 cells.forEach((cell) => {
-    cell.addEventListener('mouseover', (event) => {
-        event.target.classList.add('hover-pink');
+    cell.addEventListener('mouseover', () => {
+        cell.classList.add('hover-pink');
+    });
+});
+
+resetButton.addEventListener('click', () => {
+    cells.forEach((cell) => {
+        cell.classList.remove('hover-pink');
     });
 });
 

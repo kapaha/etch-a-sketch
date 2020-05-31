@@ -9,9 +9,70 @@
     box-sizing: border-box;
 }
 
-#grid-size {
-    margin-top: 2vw;
+/* Reset button styles. */
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn {
+    /* default for <button>, but useful for <a> */
+    display: inline-block;
     text-align: center;
+    text-decoration: none;
+
+    /* create a small space when buttons wrap on 2 lines */
+    margin: 2px 0;
+
+    /* invisible border (will be colored on hover/focus) */
+    border: solid 1px transparent;
+    border-radius: 4px;
+
+    /* size comes from text & padding (no width/height) */
+    padding: 0.5em 1em;
+
+    /* make sure colors have enough contrast! */
+    color: #FFFFFF;
+    background-color: #9555AF;
+    
+    /* all browsers: remove the default outline. */
+    outline: none;
+}
+
+/* old-school "down" effect on clic + color tweak */
+.btn:active {
+    transform: translateY(1px);
+    filter: saturate(150%);
+}
+
+/* inverse colors on mouse-over */
+.btn:hover {
+    color: #9555AF;
+    border-color: currentColor;
+    background-color: white;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.5),
+        0 0 0 1.5px rgba(255, 105, 180, 0.5);
+}
+
+/* Firefox: removes the inner border shown on focus */
+.btn::-moz-focus-inner {
+    border: none;
+}
+
+body {
+    text-align: center;
+}
+
+#grid-size {
+    margin: 2vw 0;
     font-family: sans-serif;
 }
 
