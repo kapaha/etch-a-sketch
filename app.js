@@ -11,7 +11,7 @@ addEventListenerToCells();
 resetButton.addEventListener('click', () => {
     const cells = document.querySelectorAll('.grid-item');
     cells.forEach((cell) => {
-        cell.classList.remove('hover-pink');
+        cell.classList.remove('hover-black');
     });
     makeRowsFromUserInput();
 });
@@ -31,7 +31,7 @@ function addEventListenerToCells() {
     const cells = document.querySelectorAll('.grid-item');
     cells.forEach((cell) => {
         cell.addEventListener('mouseover', () => {
-            cell.classList.add('hover-pink');
+            cell.classList.add('hover-black');
         });
     });
 }

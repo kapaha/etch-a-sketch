@@ -84,15 +84,13 @@ body {
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-columns), 1fr);
     border: 5px solid black;
-    /* remove white line issue on borders */
     background-color: black;
 }
 
 .grid-item {
-    border: 1px solid black;
-    background-color: slategray;
+    background-color: #DADADA;
 }
 
-.hover-pink {
-    background-color: pink;
+.hover-black {
+    background-color: black;
 }
