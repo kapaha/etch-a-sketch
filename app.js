@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const gridContainer = document.getElementById('grid-container');
 const gridSize = document.getElementById('grid-size');
@@ -25,7 +25,6 @@ function makeRows(rows, columns) {
         let cell = document.createElement('div');
         gridContainer.appendChild(cell).className = 'grid-item';
     }
-    
 }
 
 function addEventListenerToCells() {
@@ -48,8 +47,8 @@ function makeRowsFromUserInput() {
     const userInput = Number(prompt('Enter Grid Size:', lastGridSize))
     if (userInput === 0 || userInput === lastGridSize) {
         return;
-    } else if (isNaN(userInput) || !Number.isInteger(userInput)) {
-        alert('Please enter a whole number.');
+    } else if (isNaN(userInput) || !Number.isInteger(userInput) || userInput < 0) {
+        alert('Please enter a positive whole number.');
         return makeRowsFromUserInput();
     } else {
         removeRows();
