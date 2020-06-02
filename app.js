@@ -3,18 +3,47 @@
 const gridContainer = document.getElementById('grid-container');
 const gridSize = document.getElementById('grid-size');
 const resetButton = document.getElementById('reset-btn');
+const blackButton = document.getElementById('black-btn');
+const rainbowButton = document.getElementById('rainbow-btn');
+
 let lastGridSize;
+let selectedColorMode = 'black';
 
 makeRows(16, 16);
-addEventListenerToCells();
+setBackgroundColor();
 
 resetButton.addEventListener('click', () => {
-    const cells = document.querySelectorAll('.grid-item');
-    cells.forEach((cell) => {
-        cell.classList.remove('hover-black');
+    getCells().forEach((cell) => {
+        cell.style.backgroundColor = '#DADADA';
     });
     makeRowsFromUserInput();
 });
+
+blackButton.addEventListener('click', () => {
+    selectedColorMode = 'black';
+    setBackgroundColor();
+});
+
+rainbowButton.addEventListener('click', () => {
+    selectedColorMode = 'rainbow';
+    setBackgroundColor();
+});
+
+function setBackgroundColor() {
+    getCells().forEach((cell) => {
+        cell.addEventListener('mouseenter', () => {
+            switch (selectedColorMode) {
+                case 'black':
+                    cell.style.backgroundColor = 'transparent';
+                    break;
+                case 'rainbow':
+                    cell.style.backgroundColor = randomRgb();
+                    cell.style.opacity = '1';
+                    break;
+            }
+        });
+    });
+}
 
 function makeRows(rows, columns) {
     lastGridSize = rows;
@@ -27,20 +56,9 @@ function makeRows(rows, columns) {
     }
 }
 
-function addEventListenerToCells() {
+function getCells() {
     const cells = document.querySelectorAll('.grid-item');
-    cells.forEach((cell) => {
-        cell.addEventListener('mouseover', () => {
-            cell.classList.add('hover-black');
-        });
-    });
-}
-
-function removeRows() {
-    const cells = document.querySelectorAll('.grid-item');
-    cells.forEach((cell) => {
-        cell.remove();
-    });
+    return cells;
 }
 
 function makeRowsFromUserInput() {
@@ -53,6 +71,19 @@ function makeRowsFromUserInput() {
     } else {
         removeRows();
         makeRows(userInput, userInput);
-        addEventListenerToCells();
+        setBackgroundColor();
     }
+}
+
+function removeRows() {
+    getCells().forEach((cell) => {
+        cell.remove();
+    });
+}
+
+function randomRgb() {
+    let o = Math.round;
+    let r = Math.random;
+    let s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + 1 + ')';
 }
