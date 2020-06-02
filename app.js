@@ -38,7 +38,6 @@ function setBackgroundColor() {
                     break;
                 case 'rainbow':
                     cell.style.backgroundColor = randomRgb();
-                    cell.style.opacity = '1';
                     break;
             }
         });
