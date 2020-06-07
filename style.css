@@ -35,7 +35,7 @@ button {
     border-radius: 4px;
 
     /* size comes from text & padding (no width/height) */
-    padding: 0.5em 1em;
+    padding: 0.5em 2em;
 
     /* make sure colors have enough contrast! */
     color: black;
@@ -44,6 +44,7 @@ button {
     /* all browsers: remove the default outline. */
     outline: none;
 }
+
 
 /* old-school "down" effect on clic + color tweak */
 .btn:active {
@@ -60,7 +61,7 @@ button {
 
 .btn:focus {
     outline: none;
-    box-shadow: 0 0 0 3px blue;
+    box-shadow: 0 0 0 4px mediumseagreen;
 }
 
 /* Firefox: removes the inner border shown on focus */
@@ -68,12 +69,28 @@ button {
     border: none;
 }
 
+.btn-square {
+    border: none;
+    border-radius: 0;
+    padding: 1.5em;
+    margin: 4px;
+}
+
+.btn-square:focus {
+    box-shadow: none;
+}
+
+#reset-btn {
+    font-family: sans-serif;
+    font-size: 20px;
+}
 body {
     text-align: center;
 }
 
 
 .frame {
+    position: relative;
     width: 800px;
     height: 800px;
     margin: 50px auto;
@@ -108,12 +125,50 @@ body {
     text-shadow: 0px 2px 0px black;
 }
 
+.frame-right {
+    border: 2px solid black;
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    top: 15%;
+    right: 6%;
+}
+
+#black-btn {
+    background-color: black;
+    box-shadow: 0 0 0 4px mediumseagreen;
+}
+
+#rainbow-btn {
+    background: -moz-linear-gradient( top ,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 255, 0, 1) 15%,
+        rgba(0, 255, 0, 1) 30%,
+        rgba(0, 255, 255, 1) 50%,
+        rgba(0, 0, 255, 1) 65%,
+        rgba(255, 0, 255, 1) 80%,
+        rgba(255, 0, 0, 1) 100%);
+    background: -webkit-gradient(linear,  left top,  left bottom, 
+        color-stop(0%, rgba(255, 0, 0, 1)), 
+        color-stop(15%, rgba(255, 255, 0, 1)),
+        color-stop(30%, rgba(0, 255, 0, 1)),
+        color-stop(50%, rgba(0, 255, 255, 1)),
+        color-stop(65%, rgba(0, 0, 255, 1)),
+        color-stop(80%, rgba(255, 0, 255, 1)),
+        color-stop(100%, rgba(255, 0, 0, 1)));
+}
+
 .frame-bottom {
     width: 100%;
     height: 15%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .container {
