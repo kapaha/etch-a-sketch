@@ -31,15 +31,15 @@ button {
     margin: 2px 0;
 
     /* invisible border (will be colored on hover/focus) */
-    border: solid 1px transparent;
+    border: solid 1px black;
     border-radius: 4px;
 
     /* size comes from text & padding (no width/height) */
     padding: 0.5em 1em;
 
     /* make sure colors have enough contrast! */
-    color: #FFFFFF;
-    background-color: #9555AF;
+    color: black;
+    background-color: white;
     
     /* all browsers: remove the default outline. */
     outline: none;
@@ -53,15 +53,14 @@ button {
 
 /* inverse colors on mouse-over */
 .btn:hover {
-    color: #9555AF;
+    color: white;
     border-color: currentColor;
-    background-color: white;
+    background-color: black;
 }
 
 .btn:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.5),
-        0 0 0 1.5px rgba(255, 105, 180, 0.5);
+    box-shadow: 0 0 0 3px blue;
 }
 
 /* Firefox: removes the inner border shown on focus */
@@ -73,26 +72,54 @@ body {
     text-align: center;
 }
 
-#grid-size {
-    margin: 2vw 0;
-    font-family: sans-serif;
-}
 
 .frame {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 60vw;
-    height: 60vw;
-    margin: 2vw auto;
-    border-radius: 10px;
+    width: 800px;
+    height: 800px;
+    margin: 50px auto;
+    border-radius: 50px;
     background-color: #D5011F;
 }
 
+.frame-top {
+    position: relative;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame-title {
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 0px 2px 0px black;
+    font-size: 60px;
+    font-family: 'Indie Flower', cursive;
+}
+
+.frame-grid-size {
+    position: absolute;
+    bottom: -5%;
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    letter-spacing: 6px;
+    color: white;
+    text-shadow: 0px 2px 0px black;
+}
+
+.frame-bottom {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 .container {
-    width: 75%;
-    height: 75%;
+    margin: 0 auto;
+    width: 70%;
+    height: 70%;
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-columns), 1fr);

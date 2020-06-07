@@ -7,12 +7,17 @@
     <title>Etch A Sketch</title>
 </head>
 <body>
-    <h1 id="grid-size">16x16 Grid</h1>
-    <button class="btn" id="reset-btn">Reset</button>
-    <button class="btn" id="black-btn">Black Mode</button>
-    <button class="btn" id="rainbow-btn">Rainbow Mode</button>
     <div id="grid-frame" class="frame">
+        <div class="frame-top">
+            <h1 class="frame-title">Etch A Sketch</h1>
+            <h2 class="frame-grid-size" id="grid-size">16x16</h2>
+        </div>
         <div id="grid-container" class="container"></div>
+        <div class="frame-bottom">
+            <button class="btn" id="reset-btn">Reset</button>
+            <button class="btn" id="black-btn">Black Mode</button>
+            <button class="btn" id="rainbow-btn">Rainbow Mode</button>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>

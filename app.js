@@ -46,7 +46,7 @@ function setBackgroundColor() {
 
 function makeRows(rows, columns) {
     lastGridSize = rows;
-    gridSize.textContent = `${rows}x${columns} Grid`;
+    gridSize.textContent = `${rows} x ${columns}`;
     gridContainer.style.setProperty('--grid-rows', rows);
     gridContainer.style.setProperty('--grid-columns', columns);
     for (let i = 0; i < (rows * columns); i++) {
