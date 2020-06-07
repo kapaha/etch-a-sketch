@@ -20,11 +20,15 @@ resetButton.addEventListener('click', () => {
 });
 
 blackButton.addEventListener('click', () => {
+    blackButton.style.boxShadow = '0 0 0 4px mediumseagreen'
+    rainbowButton.style.boxShadow = 'none'
     selectedColorMode = 'black';
     setBackgroundColor();
 });
 
 rainbowButton.addEventListener('click', () => {
+    rainbowButton.style.boxShadow = '0 0 0 4px mediumseagreen'
+    blackButton.style.boxShadow = 'none'
     selectedColorMode = 'rainbow';
     setBackgroundColor();
 });
