@@ -6,6 +6,7 @@ const resetButton = document.getElementById('reset-btn');
 const blackButton = document.getElementById('black-btn');
 const rainbowButton = document.getElementById('rainbow-btn');
 const christmasButton = document.getElementById('christmas-btn');
+const title = document.getElementById('title');
 
 let lastGridSize;
 let selectedColorMode = 'black';
@@ -46,6 +47,7 @@ christmasButton.addEventListener('click', () => {
 
 rainbowButton.addEventListener('keypress', (e) => {
     if (e.keyCode === 110) {
+        title.textContent = 'HELLO NAN!';
         christmasButton.style.display = 'inline-block';
     }
 });
