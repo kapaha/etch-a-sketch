@@ -44,6 +44,12 @@ christmasButton.addEventListener('click', () => {
     setBackgroundColor();
 });
 
+rainbowButton.addEventListener('keypress', (e) => {
+    if (e.keyCode === 110) {
+        christmasButton.style.display = 'inline-block';
+    }
+});
+
 function setBackgroundColor() {
     getCells().forEach((cell) => {
         cell.addEventListener('mouseenter', () => {
