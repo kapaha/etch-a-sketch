@@ -163,6 +163,12 @@ body {
         color-stop(100%, rgba(255, 0, 0, 1)));
 }
 
+#christmas-btn {
+    background-image: url(/images/robin.jpeg);
+    background-size: 100px;
+    display: none;
+}
+
 .frame-bottom {
     width: 100%;
     height: 15%;

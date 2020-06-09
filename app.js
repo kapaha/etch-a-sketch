@@ -5,6 +5,7 @@ const gridSize = document.getElementById('grid-size');
 const resetButton = document.getElementById('reset-btn');
 const blackButton = document.getElementById('black-btn');
 const rainbowButton = document.getElementById('rainbow-btn');
+const christmasButton = document.getElementById('christmas-btn');
 
 let lastGridSize;
 let selectedColorMode = 'black';
@@ -20,16 +21,26 @@ resetButton.addEventListener('click', () => {
 });
 
 blackButton.addEventListener('click', () => {
-    blackButton.style.boxShadow = '0 0 0 4px mediumseagreen'
-    rainbowButton.style.boxShadow = 'none'
+    rainbowButton.style.boxShadow = 'none';
+    christmasButton.style.boxShadow = 'none';
+    blackButton.style.boxShadow = '0 0 0 4px mediumseagreen';
     selectedColorMode = 'black';
     setBackgroundColor();
 });
 
 rainbowButton.addEventListener('click', () => {
-    rainbowButton.style.boxShadow = '0 0 0 4px mediumseagreen'
-    blackButton.style.boxShadow = 'none'
+    blackButton.style.boxShadow = 'none';
+    christmasButton.style.boxShadow = 'none';
+    rainbowButton.style.boxShadow = '0 0 0 4px mediumseagreen';
     selectedColorMode = 'rainbow';
+    setBackgroundColor();
+});
+
+christmasButton.addEventListener('click', () => {
+    blackButton.style.boxShadow = 'none';
+    rainbowButton.style.boxShadow = 'none';
+    christmasButton.style.boxShadow = '0 0 0 4px mediumseagreen';
+    selectedColorMode = 'christmas';
     setBackgroundColor();
 });
 
@@ -43,6 +54,8 @@ function setBackgroundColor() {
                 case 'rainbow':
                     cell.style.backgroundColor = randomRgb();
                     break;
+                case 'christmas':
+                    cell.style.backgroundColor = randomChristmasColor();
             }
         });
     });
@@ -89,4 +102,13 @@ function randomRgb() {
     let r = Math.random;
     let s = 255;
     return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + 1 + ')';
+}
+
+function randomChristmasColor() {
+    const christmasColors = ['#B3000C', '#FF0012', '#FFFFFF', '#00FF3E', '#00B32C'];
+    return christmasColors[randomNumber(christmasColors.length)];
+}
+
+function randomNumber(maxExclusiveNumber) {
+    return Math.floor(Math.random() * maxExclusiveNumber)
 }
