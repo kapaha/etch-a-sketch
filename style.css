@@ -164,7 +164,7 @@ body {
 }
 
 #christmas-btn {
-    background-image: url(/images/robin.jpeg);
+    background-image: url(images/robin.jpeg);
     background-size: 100px;
     display: none;
 }
